@@ -47,3 +47,36 @@ func (e ErrorVerificationFailed) Error() string {
 	}
 	return "signature verification failed"
 }
+
+type ErrorPolicyNameExists struct {
+	Msg string
+}
+
+func (e ErrorPolicyNameExists) Error() string {
+	if e.Msg != "" {
+		return e.Msg
+	}
+	return "given policy name already exists"
+}
+
+type ErrorPolicyNotExists struct {
+	Msg string
+}
+
+func (e ErrorPolicyNotExists) Error() string {
+	if e.Msg != "" {
+		return e.Msg
+	}
+	return "given policy name not exists"
+}
+
+type ErrorInvalidJsonFormat struct {
+	Msg string
+}
+
+func (e ErrorInvalidJsonFormat) Error() string {
+	if e.Msg != "" {
+		return e.Msg
+	}
+	return "invalid json format"
+}
